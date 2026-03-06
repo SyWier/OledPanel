@@ -4,14 +4,30 @@ I2C OLED control panel featuring an SH1106 display, 5-way navigation switch, and
 
 <img width="763" height="383" alt="image" src="https://github.com/user-attachments/assets/35bd6ce3-6505-4c29-8193-25d55e91ab95" />
 
-## Hardware
+## Hardware - RevB
 
 Designed in **Altium Designer 25.8.1**
 
-I2C Devices:
-- SH1106 - address: `0x3C`
-- TCA9555 - address: `0x20 – 0x27` (configurable via A0-A2 resistors)
+**Connection**
 
-## Known issues
-- The SH1106 pinout is mirrored.<br>
-**Fix:** Jumper the resistor pads to the correct OLED pins using thin wire.
+The panel can be simply connected through a **4-pin JST-PH (2 mm)** connector. <br>
+Additionally there is space for two **7-pin headers** on the two sides:
+- The left side exposes an extra port from the GPIO expander for general use.
+- The right side contains VCC, GND, SCL, SDA, and additionally (compared to the JST connector) the INT pin.
+
+
+**OLED (SH1106)**
+
+I2C Address: `0x3C`
+
+The OLED pins can be configured with resistors. his can be useful if, instead of the SH1106, you want to use an SSD1306 OLED display. However, these modules are generally slightly smaller, so the screw holes will be misaligned.
+
+**GPIO Extender (TCA9555)**
+
+I2C Address: `0x20 – 0x27` (configurable via A0-A2 resistors)
+
+The GPIO Extender has two ports: **P0** and **P1**.
+
+Through P0, the button states can be read or polled. The GPIO extender can generate an interrupt signal when an input changes. This signal is available on the INT pin on the right-side header.
+
+The other port, P1, acts as an extra extension for the board. An onboard LED can be controlled through the **P17**, while the other 7 pins are available for general use.
