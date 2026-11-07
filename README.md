@@ -2,8 +2,7 @@
 
 I2C OLED control panel featuring an SH1106 display, 5-way navigation switch, and dedicated A/B buttons. Includes an onboard GPIO expander for button handling, with optional side pin headers exposing a GPIO port for external use. Designed for easy integration into embedded systems.
 
-<img width="1186" height="1102" alt="image" src="https://github.com/user-attachments/assets/d5b88228-68f4-4668-92cd-22785cf97f2c" />
-
+<img width="1291" height="1175" alt="img" src="https://github.com/user-attachments/assets/b1f9d9c5-91c0-4201-ac20-ab5552fbddd2" />
 
 ## Hardware - RevB
 
